@@ -7,6 +7,6 @@ class Manager extends Employee {
     }
 
     getRole() {
-        return this;
+        return this.constructor.name;
     }
 }
