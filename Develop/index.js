@@ -18,7 +18,7 @@ const teamArray = [];
 
 const startProgram = async () => {
     // Initial prompt to create manager on application start
-    const initPrompt = await i.prompt([
+    const init = await i.prompt([
         {
             type: "input",
             name: "managerName",
@@ -41,10 +41,10 @@ const startProgram = async () => {
         }
     ])
     // Takes values from inital propmpt to create a new Manager and append it to the teamArray
-    teamArray.push(new Manager(initPrompt.managerName, initPrompt.managerID, initPrompt.managerEmail, initPrompt.officeNumber));
+    teamArray.push(new Manager(init.managerName, init.managerID, init.managerEmail, init.officeNumber));
 
     // Begins the prompt to add an Engineer, Intern or finish application
-    const menuPrompt = await i.prompt([
+    const menu = await i.prompt([
         {
             type: "list",
             name: "menu",
@@ -53,7 +53,20 @@ const startProgram = async () => {
         }
     ])
 
-    
+    // Checks if the user selected Add an Engineer from the menu prompt
+    if (menu.menu === "- Add an Engineer"){
+        console.log("adding an engineer!");
+    }
+
+    // Checks if the user selected Add an Intern from the menu prompt
+    if (menu.menu === "- Add an Intern"){
+        console.log("adding an intern!");
+    }
+
+    // Checks if the user selected Finish Team Building from the menu prompt
+    if (menu.menu === "- Finish Team Building"){
+        console.log("I am finished team building!");
+    }
 
 }
 
