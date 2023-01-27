@@ -6,10 +6,6 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const teamArray = [];
 
-// fs.writeFile("./Output/index.html", generateHTML(testArray), (error) => {
-//     console.log(error);
-// });
-
  // Begins the prompt to add an Engineer, Intern or finish application
 const displayMenu = async () => {
     const menu = await i.prompt([
@@ -87,7 +83,10 @@ const displayMenu = async () => {
 
     // Checks if the user selected Finish Team Building from the menu prompt
     if (menu.menu === "- Finish Team Building"){
-        console.log(teamArray)
+        // Writes a new index.html file to the Output folder using the data from the generateHTML function with the newly formed teamArray as its parameter
+        fs.writeFile("./Output/index.html", generateHTML(teamArray), (error) => {
+            console.log(error);
+        });
     }
     
 }
