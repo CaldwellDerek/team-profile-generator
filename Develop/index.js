@@ -17,6 +17,7 @@ const teamArray = [];
 // });
 
 const startProgram = async () => {
+    // Initial prompt to create manager on application start
     const initPrompt = await i.prompt([
         {
             type: "input",
@@ -39,9 +40,21 @@ const startProgram = async () => {
             message: "Enter the Office Number:"
         }
     ])
+    // Takes values from inital propmpt to create a new Manager and append it to the teamArray
     teamArray.push(new Manager(initPrompt.managerName, initPrompt.managerID, initPrompt.managerEmail, initPrompt.officeNumber));
 
+    // Begins the prompt to add an Engineer, Intern or finish application
+    const menuPrompt = await i.prompt([
+        {
+            type: "list",
+            name: "menu",
+            message: "Finish creating your team:",
+            choices: ["- Add an Engineer", "- Add an Intern", "- Finish Team Building"]
+        }
+    ])
+
     
+
 }
 
 startProgram();
