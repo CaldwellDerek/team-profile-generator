@@ -46,23 +46,48 @@ const displayMenu = async () => {
                 message: "Enter the Engineer's GitHub Username:"
             }
         ]);
-
+        // Takes values from newE propmpt to create a new Engineer and append it to the teamArray
         teamArray.push(new Engineer(newE.engName, newE.engID, newE.engEmail, newE.gitHub));
 
-        console.log(teamArray);
-
+        // Recursive call to display menu options again
         displayMenu();
-
     }
 
     // Checks if the user selected Add an Intern from the menu prompt
     if (menu.menu === "- Add an Intern"){
-        console.log("adding an intern!");
+        // Prompt to gather intern's information
+        const newI = await i.prompt([
+            {
+                type: "input",
+                name: "intName",
+                message: "Enter Intern's name:"
+            },
+            {
+                type: "input",
+                name: "intID",
+                message: "Enter Intern's employee ID:"
+            },
+            {
+                type: "input",
+                name: "intEmail",
+                message: "Enter Intern's email:"
+            },
+            {
+                type: "input",
+                name: "school",
+                message: "Enter the Intern's School"
+            }
+        ]);
+        // Takes values from newI propmpt to create a new Intern and append it to the teamArray
+        teamArray.push(new Intern(newI.intName, newI.intID, newI.intEmail, newI.school));
+
+        // Recursive call to display menu options again
+        displayMenu();
     }
 
     // Checks if the user selected Finish Team Building from the menu prompt
     if (menu.menu === "- Finish Team Building"){
-        console.log("I am finished team building!");
+        console.log(teamArray)
     }
     
 }
