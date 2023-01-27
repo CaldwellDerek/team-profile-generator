@@ -4,6 +4,7 @@ const i = require("inquirer");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
+const teamArray = [];
 
 // const newManager = new Manager("manager", 2, "manager@email.com", 13);
 // const newEngineer = new Engineer("engineer", 3, "engineer@email.com", "engineer@github.com");
@@ -38,7 +39,9 @@ const startProgram = async () => {
             message: "Enter the Office Number:"
         }
     ])
-    console.log(initPrompt);
+    teamArray.push(new Manager(initPrompt.managerName, initPrompt.managerID, initPrompt.managerEmail, initPrompt.officeNumber));
+
+    
 }
 
 startProgram();
