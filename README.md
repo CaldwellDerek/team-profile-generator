@@ -16,7 +16,12 @@
 This is a command-line application that generates an HTML webpage displaying summaries of each individual on a project team. This application makes use of the npm Inquirer and Jest packages.
 
 ## Installation
-All dependencies are uploaded to the application's repository. After cloning the code, running npm install in the integrated terminal will download the necessary packages to run the application.
+To install the application, follow these steps in order:
+1. Clone the repository onto your machine.
+2. Open the root directory and navigate into the "Develop" directory.
+3. From the Develop directory, open an integrated terminal. Your terminal path should end with Develop
+4. You'll need to install the necessary dependencies. From your terminal, enter: npm install
+5. After installation, run the application from terminal by entering: node index.js
 
 ## Usage
 Quickly generate and compile teammember information in the form of a webpage.
